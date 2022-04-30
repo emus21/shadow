@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow | Job Shadowing Project</title>
+    
+    <style>
+html,
+body {
+    height: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 12px;
+    padding: 1rem;
+}
+
+
+.title {
+    display: block;
+    padding: 10rem 0rem;
+    text-align: center;
+}
+
+.title h2 span {
+    display: block;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+.container {
+    display: block;
+    margin: 0 auto;
+}
+
+h2 {
+    counter-reset: section;
+    font-size: 1.5rem;
+}
+
+h3:before {
+    counter-increment: section;
+    content: Counter(section) ". ";
+}
+
+/*
+    Table of Contents styling adapted from:
+    https://stackoverflow.com/questions/14138507/creating-table-of-contents-in-html
+*/
+ol {
+    counter-reset: item;
+    padding: 0rem 0rem 0rem 1rem;
+}
+
+ul li {
+    font-size: 0.8rem;
+}
+
+ol li {
+    display: block;
+    font-size: 0.8rem;
+}
+
+ol li:before {
+    content: counters(item, ".") " - ";
+    counter-increment: item;
+}
+
+.code-example {
+    border: 1px solid #000;
+    padding: 0rem 1rem;
+    overflow: auto;
+}
+
+@media only screen and (min-width: 400px) {
+    
+    .container {
+        max-width: 40rem;
+        width: 100%;
+    }
+    
+    ul li,
+    ol li {
+        font-size: 1rem;
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="title">
+            <h1>Job Shadowing Project</h1>
+            <h2>A Quick Introduction to Frontend Web Development</h2>
+        </div>
+        
+        <h2>Table of Contents</h2>
+        <ol>
+            <li><a href="#Preamble">Preamble</a></li>
+            <li>
+                <a href="#HTML-Basics">HTML Basics</a>
+                <ol>
+                    <li><a href="#Boilerplate">Boilerplate: The Work Before The Fun</a></li>
+                    <li><a href="#HTML-Common-Tags">Common Content Tags</a></li>
+                </ol>
+            </li>
+            <li>
+                <a href="#CSS-Basics">CSS Basics</a>
+                <ol>
+                    <li><a href="#CSS-Text-Styling">Text Styling</a></li>
+                    <li><a href="#CSS-Box-Styling">Box Styling</a></li>
+                </ol>
+            </li>
+            <li><a href="#Javascript-Basics">Javascript Basics</a></li>
+
+            <li><a href="#WebDev-Frameworks">WebDev Frameworks</a></li>
+            <li><a href="#Credits">Credits</a></li>
+        </ol>
+
+        <h2 id="Preamble">Preamble</h2>
+        <p>
+            Before we get started, you should know the content of this website is provided for the purposes of education and are meant to be taken as an example of what Frontend Web Development may look like.  Every topic discussed herein could be subjects of an entire book by themselves. Thus, this series is by no means intended to be a complete example of best practices or an example of best technology, but instead to be a long distance viewing of a very very complex topic.
+        </p>
+        
+        <h2 id="HTML-Basics">HTML Basics</h2>
+
+        <p>
+            In this section we're going to discuss HTML and it's role in frontend web developement. HyperText Markup Language (HTML) is a language that defines the structure of your content. HTML is made up of a series of <u>elements</u>, which you use to enclose, or wrap, different parts of the content to make it appear a certain way, or act a certain way. The enclosing <u>tags</u> can make a word or image hyperlink to somewhere else, can italicize words, can make the font bigger or smaller, and so on.
+        </p>
+        
+        
+        <h3 id="Boilerplate">Boilerplate: The Work Before The Fun</h3>
+        <p>
+            Without getting into too much detail, there are certain elements of a web page that are so commonly used that it's a good idea to have a boilerplate snippet of HTML which will allow you to get into the more interesting bits of crafting a web page without being bogged down by the some of the extremely important, yet utterly uninteresting bits of HTML structure.
+        </p>
+
+        <div class="code-example">
+            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+        </div><!-- /.code-example -->
+
+        <p>
+            We're going to break this snippet down a line at a time and discuss why it's needed!
+        </p>
+
+        <div class="code-example"><pre>&lt;!DOCTYPE html&gt;</pre></div>
+        <p>
+            The &lt;!DOCTYPE&gt; tag is a required preamble. When HTML was young (around 1991/92), doctypes were meant to act as links to a set of rules that the HTML page had to follow to be considered "good" HTML, which could mean automatic error checking and other useful things. These days, they don't do much and are basically just needed to make sure your document behaves correctly. That's all you need to know about this tag, for now.
+        </p>
+
+        <div class="code-example"><pre>&lt;html lang="en"&gt;</pre></div>
+        <p>
+            The &lt;html&gt; tag wraps all the content of the entire page and is sometimes known as the root element, in our snippet we use an attribute to hint to the browser that the content of the document is meant to be viewed by people who read and understand the English language.
+        </p>
+
+        <div class="code-example"><pre>&lt;head&gt;</pre></div>
+        <p>
+            The &lt;head&gt; tag acts as a container for all the stuff you want to include on the HTML page that isn't content that you are showing to the page's viewers. This includes things like <u>keywords</u> and a page descriptions that you want to appear in search results, CSS to style your content, character set declarations, and much more.
+        </p>
+        
+        <div class="code-example"><pre>&lt;meta charset="UTF-8"&gt;</pre></div>
+        <p>
+            The &lt;meta&gt; tag provides useful information that the browser can use to determine how it will behave when rendering your web page.
+        </p>
+        <p>
+            This sets the character set your page should use to UTF-8 which inclues most characters from the vast majority of written languages. Basically, it can now handle any textual content you might put on it. There is no reason not to set this and it can help avoid some problems later on.
+        </p>
+        
+        <div class="code-example"><pre>&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;</pre></div>
+        <p>
+            This sets a compatibility mode for legacy browsers, namely Microsoft's Internet Explorer, and tells them how they should behave when viewing the page.
+        </p>
+
+        <div class="code-example"><pre>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</pre></div>
+        <p>
+            This does 2 things. First, it sets the width of the viewport to the width of the screen in the device's native resolution. This is useful to guarantee your layouts will display properly across different browsers and devices. Second, it sets the scale to start a 1.0, which means that when you initially load the page it will be zoomed to 100%. This, generally speaking, provides a better user experience while allowing the user to zoom later on, if they require it (eg: accessibility).
+        </p>
+
+        <div class="code-example"><pre>&lt;title&gt;Document&lt;/title&gt;</pre></div>
+        <p>
+            This sets the title of your page, which is the title that appears in the browser tab the page is loaded in. It is also used to describe the page when you bookmark/favorite it.
+        </p>
+
+        <div class="code-example"><pre>&lt;body&gt;</pre></div>
+        <p>
+            This contains <b>ALL</b> the content that you want to show to web users when they visit your page, whether it's text, images, videos, games, playable audio tracks, or whatever else.
+        </p>
+
+        <h3 id="HTML-Common-Tags">Common Content Tags</h3>
+        <p>
+            Blah blah, a list of common HTML tags and their intended use vs their most common uses.
+        </p>
+        
+        <h2 id="CSS-Basics">CSS Basics</h2>
+        <p>
+            Cascading Style Sheets (CSS), blah dity blah blah.
+        </p>
+
+        <h3 id="CSS-Text-Styling">Text Styling</h3>
+        <p>
+            Blah blah, styling text elements.
+        </p>
+        
+        <h3 id="CSS-Box-Styling">Box Styling</h3>
+        <p>
+            Blah blah, styling box elements.
+        </p>
+
+        <h2 id="Javascript-Basics">Javascript Basics</h2>
+        <p>
+            Blah blah, javascript... it sucks but let's talk about it a little!
+        </p>
+
+        <h2 id="WebDev-Frameworks">WebDev Frameworks</h2>
+        <p>
+            Blah blah, basically let someone else do most of the work so we can focus on getting the goddamn job done!
+        </p>
+        
+        <h2 id="Credits">Credits</h2>
+        <ul>
+
+            <li>
+                Substantial portions of the text describing HTML, CSS, and Javascript were adapted from the <a href="https://developer.mozilla.org/en-US/docs/Learn">MDN Web Docs</a> by <a href="/en-US/docs/MDN/About/contributors.txt">Mozilla Contributors</a> and is licensed under <a href="https://creativecommons.org/licenses/by-sa/2.5/" class="external" rel=" noopener">CC-BY-SA 2.5</a>.
+            </li>
+
+            <li>
+                Paws &amp; Ruff fictional company and Logo by Jonathan Dreyfus
+            </li>
+            <li>
+                Images from <a target="_blank" href="https://freerangestock.com/photographer/RACOOL/4792">RACOOL</a> from <a target="_blank" href="https://freerangestock.com">Freerange Stock</a>
+            </li>
+            <li>
+                Images from <a target="_blank" href="https://freerangestock.com/photographer/Merelize/2111">Merelize</a> from <a target="_blank" href="https://freerangestock.com">Freerange Stock</a>
+            </li>
+            <li>
+                Images from <a target="_blank" href="https://freerangestock.com/photographer/Chance-Agrella/2">Chance Agrella</a> from <a target="_blank" href="https://freerangestock.com">Freerange Stock</a>
+            </li>
+            <li>
+                Images from <a target="_blank" href="https://freerangestock.com/photographer/AleksandarMomirovic/392">AleksandarMomirovic</a> from <a target="_blank" href="https://freerangestock.com">Freerange Stock</a>
+            </li>
+            <li>
+                Images from <a target="_blank" href="https://freerangestock.com/photographer/Pexels/4556">Pexels</a> from <a target="_blank" href="https://freerangestock.com">Freerange Stock</a>
+            </li>
+        </ul>
+
+    </div><!-- /.container -->
+
+</body>
+</html>
