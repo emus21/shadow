@@ -1,4 +1,1 @@
 assets/gallery/*.jpg
-node_modules
-bower_components
-package-lock.json
